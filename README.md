@@ -11,3 +11,7 @@ Swashbuck/Swagger via: https://docs.microsoft.com/en-us/aspnet/core/tutorials/ge
 
 Install swagger via Swashbuckle NuGet package
 Swashbuckle.AspNetCore
+
+Make models and context
+
+Make mapper and interface (test first though)

@@ -1,24 +1,23 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace TKD_theory_api.Data
 {
-    public partial class LokisaurTKDTheoryAppContext : DbContext
+    public partial class DbLokisaurTKDTheoryAppContext : DbContext, IDbContext
     {
-        public LokisaurTKDTheoryAppContext()
+        public DbLokisaurTKDTheoryAppContext()
         {
         }
 
-        public LokisaurTKDTheoryAppContext(DbContextOptions<LokisaurTKDTheoryAppContext> options)
+        public DbLokisaurTKDTheoryAppContext(DbContextOptions<DbLokisaurTKDTheoryAppContext> options)
             : base(options)
         {
         }
 
-        public virtual DbSet<DanTheoryItems> DanTheoryItems { get; set; }
-        public virtual DbSet<EngTheoryItems> EngTheoryItems { get; set; }
-        public virtual DbSet<KorTheoryItems> KorTheoryItems { get; set; }
-        public virtual DbSet<TheoryLanguages> TheoryLanguages { get; set; }
+        public virtual DbSet<DbDanTheoryItems> DanTheoryItems { get; set; }
+        public virtual DbSet<DbEngTheoryItems> EngTheoryItems { get; set; }
+        public virtual DbSet<DbKorTheoryItems> KorTheoryItems { get; set; }
+        public virtual DbSet<DbTheoryLanguages> TheoryLanguages { get; set; }
+        public virtual DbSet<DbUsers> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -29,7 +28,7 @@ namespace TKD_theory_api.Data
         {
             modelBuilder.HasAnnotation("ProductVersion", "2.2.1-servicing-10028");
 
-            modelBuilder.Entity<DanTheoryItems>(entity =>
+            modelBuilder.Entity<DbDanTheoryItems>(entity =>
             {
                 entity.ToTable("DAN_theory_items");
 
@@ -63,7 +62,7 @@ namespace TKD_theory_api.Data
                 entity.Property(e => e.SubToSubCategory).HasColumnType("text");
             });
 
-            modelBuilder.Entity<EngTheoryItems>(entity =>
+            modelBuilder.Entity<DbEngTheoryItems>(entity =>
             {
                 entity.ToTable("ENG_theory_items");
 
@@ -97,7 +96,7 @@ namespace TKD_theory_api.Data
                 entity.Property(e => e.SubToSubCategory).HasColumnType("text");
             });
 
-            modelBuilder.Entity<KorTheoryItems>(entity =>
+            modelBuilder.Entity<DbKorTheoryItems>(entity =>
             {
                 entity.ToTable("KOR_theory_items");
 
@@ -132,7 +131,7 @@ namespace TKD_theory_api.Data
                 entity.Property(e => e.SubToSubCategory).HasColumnType("text");
             });
 
-            modelBuilder.Entity<TheoryLanguages>(entity =>
+            modelBuilder.Entity<DbTheoryLanguages>(entity =>
             {
                 entity.HasKey(e => e.CountryCode);
 
@@ -144,6 +143,39 @@ namespace TKD_theory_api.Data
                     .ValueGeneratedNever();
 
                 entity.Property(e => e.Name).HasColumnType("text");
+            });
+
+            modelBuilder.Entity<DbUsers>(entity =>
+            {
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.EmailAdress)
+                    .IsRequired()
+                    .HasMaxLength(128)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FirstName)
+                    .IsRequired()
+                    .HasMaxLength(128)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LastName)
+                    .IsRequired()
+                    .HasMaxLength(128)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.PasswordHash)
+                    .IsRequired()
+                    .HasMaxLength(128);
+
+                entity.Property(e => e.PasswordSalt)
+                    .IsRequired()
+                    .HasMaxLength(128);
+
+                entity.Property(e => e.UserName)
+                    .IsRequired()
+                    .HasMaxLength(128)
+                    .IsUnicode(false);
             });
         }
     }

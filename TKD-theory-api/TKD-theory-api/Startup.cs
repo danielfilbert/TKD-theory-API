@@ -25,7 +25,7 @@ namespace TKD_theory_api
 
             var dbConnection = Configuration.GetConnectionString("db");
 
-            services.AddDbContext<LokisaurTKDTheoryAppContext>(options => options.UseSqlServer(dbConnection));
+            services.AddDbContext<DbLokisaurTKDTheoryAppContext>(options => options.UseSqlServer(dbConnection));
 
             services.AddSwaggerGen(c =>
             {

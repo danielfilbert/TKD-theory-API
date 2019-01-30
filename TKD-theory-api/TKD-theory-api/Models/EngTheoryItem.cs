@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace TKD_theory_api.Data
+﻿namespace TKD_theory_api.Models
 {
-    public partial class DanTheoryItems
+    public class EngTheoryItem
     {
         public int Id { get; set; }
         public int KoreanTheoryItemId { get; set; }
