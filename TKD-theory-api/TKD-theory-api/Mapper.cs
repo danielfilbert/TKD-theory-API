@@ -1,14 +1,35 @@
 ﻿using System.Collections.Generic;
-using TKD_theory_api.Data;
-using TKD_theory_api.Models;
+using TKDTheoryApi.Data;
+using TKDTheoryApi.Models;
 
-namespace TKD_theory_api
+namespace TKDTheoryApi
 {
     public class Mapper : IMapper
     {
+        public KorTheoryItem MapKorItem(DbKorTheoryItems dbKorTheoryItem)
+        {
+            var korTheoryItem = new KorTheoryItem
+            {
+                Id = dbKorTheoryItem.Id,
+                MainCategory = dbKorTheoryItem.MainCategory,
+                SubCategory = dbKorTheoryItem.SubCategory,
+                SubToSubCategory = dbKorTheoryItem.SubToSubCategory,
+                NameLatin = dbKorTheoryItem.NameLatin,
+                NameHangul = dbKorTheoryItem.NameHangul,
+                NamePhonetic = dbKorTheoryItem.NamePhonetic,
+                NameAudio = dbKorTheoryItem.NameAudio
+            };
+            return korTheoryItem;
+        }
+
         public IEnumerable<KorTheoryItem> MapKorItems(IEnumerable<DbKorTheoryItems> dbKorTheoryItems)
         {
-            throw new System.NotImplementedException();
+            var korItems = new List<KorTheoryItem>();
+            foreach(var item in dbKorTheoryItems)
+            {
+                korItems.Add(MapKorItem(item));
+            }
+            return korItems;
         }
 
         public IEnumerable<DanTheoryItem> MapDanItems(IEnumerable<DbDanTheoryItems> dbDanTheoryItems)

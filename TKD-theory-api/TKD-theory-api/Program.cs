@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace TKD_theory_api
+namespace TKDTheoryApi
 {
     public class Program
     {

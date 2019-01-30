@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <RootNamespace>TKD_theory_api</RootNamespace>
+    <RootNamespace>TKDTheoryApi</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

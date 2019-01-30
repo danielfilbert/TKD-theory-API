@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TKD_theory_api.Models
+namespace TKDTheoryApi.Models
 {
     public class TKDTheoryAppContext : ITKDTheoryAppContext
     {

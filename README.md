@@ -15,3 +15,12 @@ Swashbuckle.AspNetCore
 Make models and context
 
 Make mapper and interface (test first though)
+
+
+
+
+
+
+
+
+FakeItEasy for later use

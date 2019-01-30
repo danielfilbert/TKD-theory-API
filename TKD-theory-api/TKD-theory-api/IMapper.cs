@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
-using TKD_theory_api.Data;
-using TKD_theory_api.Models;
+using TKDTheoryApi.Data;
+using TKDTheoryApi.Models;
 
-namespace TKD_theory_api
+namespace TKDTheoryApi
 {
     interface IMapper
     {
+        KorTheoryItem MapKorItem(DbKorTheoryItems dbKorTheoryItem);
         IEnumerable<KorTheoryItem> MapKorItems(IEnumerable<DbKorTheoryItems> dbKorTheoryItems);
         IEnumerable<DanTheoryItem> MapDanItems(IEnumerable<DbDanTheoryItems> dbDanItems);
         IEnumerable<EngTheoryItem> MapEngItems(IEnumerable<DbEngTheoryItems> dbEngTheoryItems);

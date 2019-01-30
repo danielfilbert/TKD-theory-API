@@ -1,4 +1,4 @@
-﻿namespace TKD_theory_api.Data
+﻿namespace TKDTheoryApi.Data
 {
     public class DbKorTheoryItems
     {

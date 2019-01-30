@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace TKD_theory_api.Data
+﻿namespace TKDTheoryApi.Data
 {
     public partial class DbTheoryLanguages
     {

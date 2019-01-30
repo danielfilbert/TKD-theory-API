@@ -1,4 +1,4 @@
-﻿namespace TKD_theory_api.Models
+﻿namespace TKDTheoryApi.Models
 {
     public class TheoryLanguages
     {

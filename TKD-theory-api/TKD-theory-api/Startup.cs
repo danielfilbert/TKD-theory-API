@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
-using TKD_theory_api.Data;
+using TKDTheoryApi.Data;
 
-namespace TKD_theory_api
+namespace TKDTheoryApi
 {
     public class Startup
     {
