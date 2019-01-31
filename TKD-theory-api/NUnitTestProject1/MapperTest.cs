@@ -12,6 +12,25 @@ namespace TKDTheoryApi.test
         public class MapperTest
         {
             [Test]
+            public void GetKorTheoryItemTest()
+            {
+                var mapper = new Mapper();
+                var seedData = new SeedData();
+                var dbKorTheoryItem = seedData.GetDbKorTheoryItem(1);
+
+                var result = mapper.MapKorItem(dbKorTheoryItem);
+
+                Assert.AreEqual(dbKorTheoryItem.Id, result.Id);
+                Assert.AreEqual(dbKorTheoryItem.MainCategory, result.MainCategory);
+                Assert.AreEqual(dbKorTheoryItem.SubCategory, result.SubCategory);
+                Assert.AreEqual(dbKorTheoryItem.SubToSubCategory, result.SubToSubCategory);
+                Assert.AreEqual(dbKorTheoryItem.NameLatin, result.NameLatin);
+                Assert.AreEqual(dbKorTheoryItem.NameHangul, result.NameHangul);
+                Assert.AreEqual(dbKorTheoryItem.NamePhonetic, result.NamePhonetic);
+                Assert.AreEqual(dbKorTheoryItem.NameAudio, result.NameAudio);
+            }
+
+            [Test]
             public void GetKorTheoryItemsTest()
             {
                 var mapper = new Mapper();
