@@ -94,5 +94,23 @@ namespace TKDTheoryApi.test
                 NameAudio = $"TestEngNameAudio-{id}"
             };
         }
+
+        public DbTheoryLanguages GetDbTheoryLanguages(string countryCode = "DKK", string name = "Dansk")
+        {
+            return new DbTheoryLanguages
+            {
+                CountryCode = countryCode,
+                Name = name
+            };
+        }
+
+        public TheoryLanguages GetTheoryLanguages(string countryCode = "DKK", string name = "Dansk")
+        {
+            return new TheoryLanguages
+            {
+                CountryCode = countryCode,
+                Name = name
+            };
+        }
     }
 }
