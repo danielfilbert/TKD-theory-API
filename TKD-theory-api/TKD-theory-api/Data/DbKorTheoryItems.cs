@@ -1,6 +1,6 @@
 ﻿namespace TKDTheoryApi.Data
 {
-    public class DbKorTheoryItems
+    public partial class DbKorTheoryItems
     {
         public int Id { get; set; }
         public string MainCategory { get; set; }

@@ -84,6 +84,16 @@ namespace TKDTheoryApi
             return engItems;
         }
 
+        public TheoryLanguages MapLanguage(DbTheoryLanguages dbTheoryLanguage)
+        {
+            var language = new TheoryLanguages
+            {
+                CountryCode = dbTheoryLanguage.CountryCode,
+                Name = dbTheoryLanguage.Name
+            };
+            return language;
+        }
+
         public IEnumerable<TheoryLanguages> MapLanguages(IEnumerable<DbTheoryLanguages> dbTheoryLanguages)
         {
             var languages = new List<TheoryLanguages>();

@@ -1,6 +1,6 @@
 ﻿namespace TKDTheoryApi.Data
 {
-    public class DbDanTheoryItems
+    public partial class DbDanTheoryItems
     {
         public int Id { get; set; }
         public int KoreanTheoryItemId { get; set; }

@@ -16,8 +16,10 @@ Make models and context
 
 Make mapper and interface (test first though)
 
+TODO: Make api endpoint controller with CRUD
 
 
+NOTE THAT: Lots of interfaces so the API is independent on the database type and placement!
 
 
 

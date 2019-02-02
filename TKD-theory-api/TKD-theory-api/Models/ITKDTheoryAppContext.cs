@@ -2,18 +2,22 @@
 
 namespace TKDTheoryApi.Models
 {
-    interface ITKDTheoryAppContext
+    public interface ITKDTheoryAppContext
     {
+        KorTheoryItem GetKorTheoryItem(int id);
+        DanTheoryItem GetDanTheoryItem(int id);
+        EngTheoryItem GetEngTheoryItem(int id);
+
         IEnumerable<KorTheoryItem> GetKorTheoryItems();
 
         IEnumerable<DanTheoryItem> GetDanTheoryItems();
         IEnumerable<EngTheoryItem> GetEngTheoryItems();
+
+        TheoryLanguages GetTheoryLanguage(string countryCode);
         IEnumerable<TheoryLanguages> GetTheoryLanguages();
 
+        DanTheoryItem PostDanTheoryItem();
         //Get current categories //the user should be able to create new categories and subcategories
-        //KorTheoryItem GetKorTheoryItem(int id); //this should maybe be limited to categories or subcategories as well or have a option to do so
-        //DanTheoryItem GetDanTheoryItem(int id); //this should include the id desired for the kor theory item
-        //KorTheoryItem GetEngTheoryItem(int id);
 
     }
 }

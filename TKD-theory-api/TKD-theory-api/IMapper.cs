@@ -4,7 +4,7 @@ using TKDTheoryApi.Models;
 
 namespace TKDTheoryApi
 {
-    interface IMapper
+    public interface IMapper
     {
         KorTheoryItem MapKorItem(DbKorTheoryItems dbKorTheoryItem);
         DanTheoryItem MapDanItem(DbDanTheoryItems dbDanTheoryItem);
@@ -12,6 +12,7 @@ namespace TKDTheoryApi
         IEnumerable<KorTheoryItem> MapKorItems(IEnumerable<DbKorTheoryItems> dbKorTheoryItems);
         IEnumerable<DanTheoryItem> MapDanItems(IEnumerable<DbDanTheoryItems> dbDanItems);
         IEnumerable<EngTheoryItem> MapEngItems(IEnumerable<DbEngTheoryItems> dbEngTheoryItems);
+        TheoryLanguages MapLanguage(DbTheoryLanguages dbTheoryLanguage);
         IEnumerable<TheoryLanguages> MapLanguages(IEnumerable<DbTheoryLanguages> dbTheoryLanguages);
     }
 }
