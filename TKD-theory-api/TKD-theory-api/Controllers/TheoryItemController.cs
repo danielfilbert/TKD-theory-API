@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using TKDTheoryApi.Models;
 
@@ -10,7 +11,7 @@ namespace TKDTheoryApi.Controllers
     {
         private readonly ITKDTheoryAppContext _context;
 
-        public TheoryItemController(TKDTheoryAppContext context)//ITKDTheoryAppContext context)
+        public TheoryItemController(ITKDTheoryAppContext context)
         {
             _context = context;
         }
@@ -19,8 +20,16 @@ namespace TKDTheoryApi.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<DanTheoryItem>> GetDanTheoryItems()
         {
-            var danItems = _context.GetDanTheoryItems();
-            return new ActionResult<IEnumerable<DanTheoryItem>>(danItems);
+            try
+            {
+                var danItems = _context.GetDanTheoryItems();
+                return new ActionResult<IEnumerable<DanTheoryItem>>(danItems);
+            }
+            catch (Exception exc)
+            {
+                throw exc;
+            }
+
         }
 
         [Route("dan/{id}")]

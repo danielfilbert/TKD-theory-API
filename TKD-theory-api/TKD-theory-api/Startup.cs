@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 using TKDTheoryApi.Data;
+using TKDTheoryApi.Models;
 
 namespace TKDTheoryApi
 {
@@ -26,6 +27,9 @@ namespace TKDTheoryApi
             var dbConnection = Configuration.GetConnectionString("db");
 
             services.AddDbContext<DbLokisaurTKDTheoryAppContext>(options => options.UseSqlServer(dbConnection));
+            services.AddScoped<IDbContext, DbLokisaurTKDTheoryAppContext>();
+            services.AddScoped<ITKDTheoryAppContext, TKDTheoryAppContext>();
+            services.AddScoped<IMapper, Mapper>();
 
             services.AddSwaggerGen(c =>
             {
