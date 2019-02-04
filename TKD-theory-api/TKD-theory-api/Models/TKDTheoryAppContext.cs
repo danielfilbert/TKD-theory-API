@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using TKDTheoryApi.Data;
 
@@ -118,9 +119,21 @@ namespace TKDTheoryApi.Models
             return theoryLanguages;
         }
 
-        public DanTheoryItem PostDanTheoryItem()
+        public DanTheoryItem PostDanTheoryItem(DanTheoryItem danTheoryItem)
         {
-            throw new System.NotImplementedException();
+            var theoryItem = new DbDanTheoryItems
+            {
+                Id = danTheoryItem.Id,
+                KoreanTheoryItemId = danTheoryItem.KoreanTheoryItemId,
+                MainCategory = danTheoryItem.MainCategory,
+                SubCategory = danTheoryItem.SubCategory,
+                SubToSubCategory = danTheoryItem.SubToSubCategory,
+                NameLatin = danTheoryItem.NameLatin,
+                NamePhonetic = danTheoryItem.NamePhonetic,
+                NameAudio = danTheoryItem.NameAudio
+            };
+            _dbContext.DanTheoryItems.Add(theoryItem);
+            return danTheoryItem;
         }
     }
 }

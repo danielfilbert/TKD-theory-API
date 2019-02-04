@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using TKDTheoryApi.Models;
 
 namespace TKDTheoryApi.Controllers
@@ -76,11 +76,12 @@ namespace TKDTheoryApi.Controllers
             return new ActionResult<EngTheoryItem>(engItem);
         }
 
-        //[Route("dan/")]
-        //[HttpPost]
-        //public ActionResult<DanTheoryItem> PostDanTheoryItem()
-        //{
-        //    return null;
-        //}
+        [Route("dan/")]
+        [HttpPost]
+        public ActionResult<DanTheoryItem> PostDanTheoryItem(DanTheoryItem danTheoryItem)
+        {
+            _context.PostDanTheoryItem(danTheoryItem);
+            return new ActionResult<DanTheoryItem>(danTheoryItem);
+        }
     }
 }

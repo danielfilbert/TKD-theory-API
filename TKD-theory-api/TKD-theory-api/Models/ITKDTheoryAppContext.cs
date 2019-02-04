@@ -16,7 +16,7 @@ namespace TKDTheoryApi.Models
         TheoryLanguages GetTheoryLanguage(string countryCode);
         IEnumerable<TheoryLanguages> GetTheoryLanguages();
 
-        DanTheoryItem PostDanTheoryItem();
+        DanTheoryItem PostDanTheoryItem(DanTheoryItem danTheoryItem);
         //Get current categories //the user should be able to create new categories and subcategories
 
     }
