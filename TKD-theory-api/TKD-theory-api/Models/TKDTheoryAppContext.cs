@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using TKDTheoryApi.Data;
 
@@ -133,6 +132,7 @@ namespace TKDTheoryApi.Models
                 NameAudio = danTheoryItem.NameAudio
             };
             _dbContext.DanTheoryItems.Add(theoryItem);
+            //_dbContext.SaveChanges();
             return danTheoryItem;
         }
     }
