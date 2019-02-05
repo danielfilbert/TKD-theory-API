@@ -132,7 +132,7 @@ namespace TKDTheoryApi.Models
                 NameAudio = danTheoryItem.NameAudio
             };
             _dbContext.DanTheoryItems.Add(theoryItem);
-            //_dbContext.SaveChanges();
+            _dbContext.SaveChanges();
             return danTheoryItem;
         }
     }

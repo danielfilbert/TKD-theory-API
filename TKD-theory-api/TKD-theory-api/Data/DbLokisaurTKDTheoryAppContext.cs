@@ -15,6 +15,11 @@ namespace TKDTheoryApi.Data
         {
         }
 
+        public override int SaveChanges()
+        {
+            return base.SaveChanges();
+        }
+
         public virtual DbSet<DbDanTheoryItems> DanTheoryItems { get; set; }
         public virtual DbSet<DbEngTheoryItems> EngTheoryItems { get; set; }
         public virtual DbSet<DbKorTheoryItems> KorTheoryItems { get; set; }

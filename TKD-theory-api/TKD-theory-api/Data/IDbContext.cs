@@ -9,5 +9,6 @@ namespace TKDTheoryApi.Data
         DbSet<DbKorTheoryItems> KorTheoryItems { get; set; }
         DbSet<DbTheoryLanguages> TheoryLanguages { get; set; }
         DbSet<DbUsers> Users { get; set; }
+        int SaveChanges();
     }
 }
